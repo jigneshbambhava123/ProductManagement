@@ -94,6 +94,35 @@ public class AccountController:Controller
             };
         }
 
+          //GET : AddNewUser
+        public async Task<IActionResult> Register(){
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegistrationViewModel registerModel)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                var result = await _authService.AddNewUserAsync(registerModel);
+                
+                if (result.success)
+                {
+                    TempData["ResultMessage"] = result.message;
+                    return RedirectToAction("Login","Account");
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = result.message;
+                    return View(registerModel);
+                }
+            }
+
+            return View(registerModel);
+        }
+
         public async Task<IActionResult> Logout(){ 
             Response.Cookies.Delete("AuthToken");
             return RedirectToAction("Login","Account");

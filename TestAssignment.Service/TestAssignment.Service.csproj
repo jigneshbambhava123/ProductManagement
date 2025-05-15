@@ -3,6 +3,7 @@
     <ProjectReference Include="..\TestAssignment.Repository\TestAssignment.Repository.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.20" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.0" />
   </ItemGroup>

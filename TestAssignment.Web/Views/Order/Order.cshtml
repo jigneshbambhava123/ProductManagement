@@ -1,0 +1,33 @@
+@{
+    Layout = "_Layout";
+}
+<h1>OrderList</h1>
+
+<div class="annalysisform  shadow-lg  bg-white rounded" style="background-color: #FFFFFF; border-radius: 5px;">
+    <div class="d-flex shadow mb-5 bg-white rounded">
+        <div class="w-100 p-3" style=" padding-left: 13px;" id="item-left-border">
+            
+            @* partial view to orderlist *@
+            <div id="orderlist-container"></div>
+            </div>
+            
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+     $(document).ready(function () {
+                $.ajax({
+                    url: "/Order/OrderList",
+                    type: "GET",
+                    success: function (response) {
+                        $('#orderlist-container').html(response); 
+                    },
+                    error: function (xhr) {
+                        console.error(xhr.responseText);
+                        alert("Error orderlist patialview");
+                    }
+                });
+        });
+</script>

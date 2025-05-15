@@ -22,6 +22,144 @@ namespace TestAssignment.Entity.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("TestAssignment.Entity.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Isdeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<decimal>("Orderamount")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("Orderdate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Orderinstructions")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("Paidamount")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("Paidon")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Paymentmode")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("Rating")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("Subtotal")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("Updatedat")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("Userid")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Userid");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("TestAssignment.Entity.Models.Orderdetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Createdat")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Isdeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("Isprepared")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Orderid")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Productamount")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("Productid")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Specialinstruction")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("Unitprice")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("Updatedat")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Orderid");
+
+                    b.HasIndex("Productid");
+
+                    b.ToTable("Orderdetail");
+                });
+
+            modelBuilder.Entity("TestAssignment.Entity.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Createdat")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Isdeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Rate")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("Updateat")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Product");
+                });
+
             modelBuilder.Entity("TestAssignment.Entity.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -51,7 +189,7 @@ namespace TestAssignment.Entity.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime?>("Createdat")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -82,13 +220,13 @@ namespace TestAssignment.Entity.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("ResetTokenExpiry")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Roleid")
                         .HasColumnType("integer");
 
                     b.Property<DateTime?>("Updateat")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -99,6 +237,36 @@ namespace TestAssignment.Entity.Migrations
                     b.HasIndex("Roleid");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TestAssignment.Entity.Models.Order", b =>
+                {
+                    b.HasOne("TestAssignment.Entity.Models.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("Userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TestAssignment.Entity.Models.Orderdetail", b =>
+                {
+                    b.HasOne("TestAssignment.Entity.Models.Order", "Order")
+                        .WithMany("Orderdetails")
+                        .HasForeignKey("Orderid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestAssignment.Entity.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("Productid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("TestAssignment.Entity.Models.User", b =>
@@ -112,9 +280,19 @@ namespace TestAssignment.Entity.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("TestAssignment.Entity.Models.Order", b =>
+                {
+                    b.Navigation("Orderdetails");
+                });
+
             modelBuilder.Entity("TestAssignment.Entity.Models.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("TestAssignment.Entity.Models.User", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

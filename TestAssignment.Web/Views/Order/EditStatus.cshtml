@@ -1,0 +1,50 @@
+@model TestAssignment.Entity.Models.Order
+
+@{
+    Layout = "_Layout";
+}
+<h1>Edit Order Status</h1>
+
+
+    <input id="orderstatus" type="hidden" asp-for="Id" />
+
+    <select class="form-select" id="status" name="ModifierGroupId" asp-for="Status">
+        <option value="Pending" selected>Pending</option>
+        <option value="Accepted">Accepted</option>
+        <option value="Shipped ">Shipped </option>
+        <option value="Delivered">Delivered</option>
+    </select>
+    <label for="modifier-group-select1">Select Status </label>
+
+    <br>
+     <button id="savestatusButton" type="submit" class="btn btn-primary mt-3">Edit</button>
+     <a asp-action="Order" asp-controller="Order" class="btn btn-secondary mt-3">Cancel</a>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+     $(document).ready(function () {
+
+
+        $('#savestatusButton').on('click', function () {
+                var orderId= $('#orderstatus').val();
+                var status = $('.form-select').find('option:selected').val();
+                console.log("status"+status);
+                console.log("orderId"+orderId);
+
+                $.ajax({
+                    url: "/Order/EditStatus",
+                    type: "POST",
+                    data:{status : status,orderId:orderId},
+                    success: function (response) {
+                        toastr.success("orderstatus edited successfully");
+                    },
+                    error: function (xhr) {
+                        console.error(xhr.responseText);
+                        alert("Error orderlist patialview");
+                    }
+                });
+        });
+    });
+</script>

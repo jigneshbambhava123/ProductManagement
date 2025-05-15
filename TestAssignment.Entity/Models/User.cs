@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TestAssignment.Entity.Models;
 
 public class User
@@ -17,17 +19,22 @@ public class User
 
     public int Roleid { get; set; }
 
+    [Column(TypeName= "timestamp without time zone")]
     public DateTime? Createdat { get; set; }
 
+    [Column(TypeName= "timestamp without time zone")]
     public DateTime? Updateat { get; set; }
 
     public string? PasswordResetToken { get; set; }
 
+    [Column(TypeName= "timestamp without time zone")]
     public DateTime? ResetTokenExpiry { get; set; }
 
     public string? PasswordHash { get; set; }
 
-    public bool Isdeleted { get; set; }
+    public bool Isdeleted { get; set; } = false;
 
     public virtual Role Role { get; set; } = null!;
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
 }

@@ -1,0 +1,53 @@
+@model IEnumerable<TestAssignment.Entity.Models.Product>
+
+<div class="d-flex justify-content-between">
+    <h1>Product List</h1>
+    @if (User.IsInRole("Admin"))
+                        {
+     <a asp-controller="Product" asp-action="Create" class="btn btn-primary btn-sm" style="height: 50px;">+ Add
+                        Product</a>
+    }
+</div>
+
+
+<div id="productlist-container"></div>
+
+@section Scripts {
+<script>
+    $('document').ready(function(){
+        loadCustomerList(1, 'Id', 'asc', '', '');
+    });
+
+    function loadCustomerList(page, sortColumn = 'Id' , sortDirection = 'asc', fromDate = '', toDate = '') {
+        //get table list
+        
+        var pageSize = $("#ordersPerPage").val();
+        var searchTerm = '';
+        var timeFilter = '';
+
+        taxAjaxRequest = $.ajax({
+
+            url: "/Product/ProductList",
+            type: 'GET',
+            data: { page :page, pageSize:pageSize, search: searchTerm, time: timeFilter, sortColumn: sortColumn, sortDirection: sortDirection, fromDate: fromDate, toDate: toDate },
+            success: function (data) {
+                console.log("success")
+                $('#productlist-container').html(data);
+            },
+            error: function () {
+                alert('Error loading orderlist table.');
+            }
+        }); 
+    }
+
+     // Change Items Per Page
+        function changeOrderlistPageSize(select) {
+            loadCustomerList(1, 'Id', 'asc', '', '');
+        }
+
+        // Change Page
+        function changeOrderPage(newPage) {
+            loadCustomerList(newPage, 'Id', 'asc', '', '');
+        }
+</script>
+}

@@ -1,0 +1,85 @@
+@model TestAssignment.Entity.ViewModels.RegistrationViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-dismissible alert-danger" id="success-message2" style="width: 430px;
+    position: fixed; right: 0px; top: 0px; height: 70px;transition: opacity 0.5s ease-out;">
+        @TempData["ErrorMessage"]
+    </div>
+}
+<link rel="stylesheet" href="~/css/Register.css">
+
+<div class="dashboardpage d-flex justify-content-center mt-5">
+    <div class="dashboard mt-2" style="width: 34%;">
+        <form asp-action="Register" asp-controller="Account" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <div class="d-flex justify-content-center mb-3">
+                <h3 class="dashboard" style="color: #0066a7;" >Registration</h3>
+            </div>
+
+            <div class="annalysisform p-2 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="onecolomnmain" style="margin: 10px;">
+                    <div class="row mb-3">
+                        <!-- First Name -->
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name" asp-for="FirstName">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- Last Name -->
+                        <div class="col">
+                            
+                            <input type="text" class="form-control" placeholder="Last Name" asp-for="LastName">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- Username -->
+                        <div class="col">
+                           
+                            <input type="text" class="form-control" placeholder="User Name" asp-for="UserName">
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <input type="number" asp-for="RoleId" value="2" hidden>
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- Email -->
+                        <div class="col">
+                            <input type="email" class="form-control" placeholder="Email" asp-for="Email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <!-- Email -->
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="Password" asp-for="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <!-- Email -->
+                        <div class="col">
+                            <input type="number" class="form-control" placeholder="Phone Number" asp-for="Phone">
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center ">
+                        <button type="submit" class="btn btn-primary btn-lg me-2">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

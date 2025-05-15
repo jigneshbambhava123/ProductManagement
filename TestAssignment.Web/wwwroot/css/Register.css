@@ -1,0 +1,46 @@
+
+/*form add user*/
+.onecolomn {
+    font: icon;
+    font-size: x-large;
+    margin-bottom: 13px;
+    margin-top: 37px;
+}
+
+.form-item {
+    position: relative;
+    margin-bottom: 15px
+}
+
+.form-item input {
+    display: block;
+    background: transparent;
+    border: solid 1px #ccc;
+    transition: all .3s ease;
+}
+
+.form-item label {
+    position: absolute;
+    cursor: text;
+    z-index: 2;
+    top: 13px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+}
+
+.form-item input:focus+label,
+.form-item input:valid+label {
+    font-size: 11px;
+    top: -5px
+}
+
+/* permission css */
+#floatingSelectGrid{
+    width: 50% ;
+}
+   
+

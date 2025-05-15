@@ -1,0 +1,20 @@
+namespace TestAssignment.Entity.Helper;
+
+public class PaginatedList<T>: List<T>, IEnumerable<T>
+{
+    public List<T> Items { get; }
+    public int TotalItems { get; }
+    public int PageSize { get; }
+    public int CurrentPage { get; }
+    public int TotalPages => (int)Math.Ceiling(TotalItems / (double)PageSize);
+    public bool HasPreviousPage => CurrentPage > 1;
+    public bool HasNextPage => CurrentPage < TotalPages;
+
+    public PaginatedList(List<T> items, int totalItems, int currentPage, int pageSize)
+    {
+        Items = items;
+        TotalItems = totalItems;
+        CurrentPage = currentPage;
+        PageSize = pageSize;    
+    }
+}

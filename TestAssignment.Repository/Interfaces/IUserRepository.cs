@@ -5,4 +5,5 @@ namespace TestAssignment.Repository.Interfaces;
 public interface IUserRepository
 {
     Task<User> GetUserByEmailAsync(string email);
+    Task AddNewUserAsync(User user);
 }
