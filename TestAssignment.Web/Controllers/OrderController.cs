@@ -76,6 +76,7 @@ public class OrderController: Controller
     }
 
     // GET: Order/Edit/5
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> EditStatus(int? id)
     {
         if (id == null)
