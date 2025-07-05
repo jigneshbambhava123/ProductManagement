@@ -5,7 +5,7 @@ using TestAssignment.Repository.Interfaces;
 using TestAssignment.Service.Interfaces;
 
 namespace TestAssignment.Service.Implementations;
-//authservice
+//authservice Iauthservice
 public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
