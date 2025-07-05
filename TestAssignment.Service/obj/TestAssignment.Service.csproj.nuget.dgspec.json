@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Service\\TestAssignment.Service.csproj": {}
+    "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Service\\TestAssignment.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\TestAssignment.Entity.csproj": {
+    "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\TestAssignment.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\TestAssignment.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\TestAssignment.Entity.csproj",
         "projectName": "TestAssignment.Entity",
-        "projectPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\TestAssignment.Entity.csproj",
-        "packagesPath": "C:\\Users\\pctr48\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\obj\\",
+        "projectPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\TestAssignment.Entity.csproj",
+        "packagesPath": "C:\\Users\\jigne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pctr48\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jigne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,30 +98,37 @@
         }
       }
     },
-    "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\TestAssignment.Repository.csproj": {
+    "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\TestAssignment.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\TestAssignment.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\TestAssignment.Repository.csproj",
         "projectName": "TestAssignment.Repository",
-        "projectPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\TestAssignment.Repository.csproj",
-        "packagesPath": "C:\\Users\\pctr48\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\obj\\",
+        "projectPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\TestAssignment.Repository.csproj",
+        "packagesPath": "C:\\Users\\jigne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pctr48\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jigne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\TestAssignment.Entity.csproj": {
-                "projectPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Entity\\TestAssignment.Entity.csproj"
+              "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\TestAssignment.Entity.csproj": {
+                "projectPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Entity\\TestAssignment.Entity.csproj"
               }
             }
           }
@@ -154,30 +168,37 @@
         }
       }
     },
-    "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Service\\TestAssignment.Service.csproj": {
+    "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Service\\TestAssignment.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Service\\TestAssignment.Service.csproj",
+        "projectUniqueName": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Service\\TestAssignment.Service.csproj",
         "projectName": "TestAssignment.Service",
-        "projectPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Service\\TestAssignment.Service.csproj",
-        "packagesPath": "C:\\Users\\pctr48\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Service\\obj\\",
+        "projectPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Service\\TestAssignment.Service.csproj",
+        "packagesPath": "C:\\Users\\jigne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pctr48\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jigne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\TestAssignment.Repository.csproj": {
-                "projectPath": "C:\\Users\\pctr48\\Downloads\\TestAssignment-main\\ProductManagement\\TestAssignment.Repository\\TestAssignment.Repository.csproj"
+              "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\TestAssignment.Repository.csproj": {
+                "projectPath": "C:\\Users\\jigne\\Downloads\\ProductManagement-1\\TestAssignment.Repository\\TestAssignment.Repository.csproj"
               }
             }
           }
